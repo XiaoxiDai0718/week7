@@ -142,6 +142,7 @@ app.get('/updatetaskstatus', function (req, res) {
 
 app.post('/updatetask', function (req, res) {
     let taskDetails = req.body;
-    Tasks.updateOne({ 'Taskid': parseInt(taskDetails.oldid) }, { $set: { 'Taskstatus': taskDetails.newstatus } }, function () { });
+    Tasks.updateOne({ 'Taskid': parseInt(taskDetails.oldid) },
+     { $set: { 'Taskstatus': taskDetails.newstatus } }, function () { });
     res.redirect('/getalltask')
 });
